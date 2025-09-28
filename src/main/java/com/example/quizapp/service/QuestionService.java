@@ -36,8 +36,8 @@ public class QuestionService {
 	}
 
 	public ResponseEntity<String> addQuestion(Question question) {
-		questionDao.save(question);
 		try {
+			questionDao.save(question);
 			return new ResponseEntity<>("Success",HttpStatus.CREATED);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -46,8 +46,8 @@ public class QuestionService {
 	}
 
 	public ResponseEntity<String> deleteQuestion(Integer id) {
-		questionDao.deleteById(id);
 		try {
+			questionDao.deleteById(id);
 			return new ResponseEntity<>("The question is delete with ID: " + id,HttpStatus.OK);
 		}catch(Exception e){
 			e.printStackTrace();
